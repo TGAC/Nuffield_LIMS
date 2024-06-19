@@ -1,10 +1,25 @@
 {% extends "master.html" %}
-
 {% block content %}
+    <!--
+    This block of code is responsible for rendering the Sample List page.
+
+    It extends the master.html template and fills the content block with the HTML needed to display the list of samples.
+
+    If there are samples available, it creates a table and populates it with the taxon ID and scientific name of each sample.
+    Each taxon ID is a link to the detail page for that sample.
+
+    If there are no samples available, it displays a message saying "No samples are available."
+    -->
 
     <h1>Sample List</h1>
 
     {% if samples %}
+        <!--
+        This block of code is executed if there are samples available.
+
+        It creates a table with two columns: Taxon ID and Scientific Name.
+        It then loops through each sample and creates a new row in the table for that sample.
+        -->
 
         <table class="table">
             <tr>
@@ -12,13 +27,26 @@
                 <th>Scientific Name</th>
             </tr>
             {% for s in samples %}
+            {% endfor %}
                 <tr>
+                <!--
+                This block of code is executed for each sample.
+
+                It creates a new row in the table and fills it with the taxon ID and scientific name of the sample.
+                The taxon ID is a link to the detail page for that sample.
+                -->
+
                 <td><a href="/lims/{{ s.id }}/">{{ s.taxon_id }}</a></td>
                 <td>{{ s.scientific_name }}</td>
-            {% endfor %}
         </table>
     {% else %}
-        <p>No samples are available.</p>
     {% endif %}
+        <!--
+        This block of code is executed if there are no samples available.
+
+        It displays a message saying "No samples are available."
+        -->
+
+        <p>No samples are available.</p>
 
 {% endblock %}

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+    This is the head section of the HTML document. It contains metadata about the HTML document, including the character set, page title, and links to CSS and JavaScript files.
+
+    The link tag is used to link an external CSS file. In this case, it's linking to the Bootstrap CSS file hosted on a CDN.
+
+    The script tag is used to link an external JavaScript file. In this case, it's linking to the Bootstrap JavaScript file hosted on a CDN.
+
+    The meta tag with charset attribute is used to specify the character encoding for the HTML document.
+    -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -10,7 +20,13 @@
     <title>Nuffield LIMS</title>
 </head>
 <body>
-{% block content %}
-{% endblock %}
+    <!--
+    This is the body section of the HTML document. It contains the content that is rendered in the browser.
+
+    The Django template language is used to define a content block. This block can be filled with content in other templates that extend this one.
+    -->
+
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
