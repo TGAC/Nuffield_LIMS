@@ -1,0 +1,47 @@
+{% extends "master.html" %}
+
+{% block content %}
+
+    <h1 class="h1" style="padding: 20px 0 50px 20px">Extraction: {{ extraction.id }} - Sample: {{ sample.scientific_name }}</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <h2>QC</h2>
+            <table class="table">
+                {% for qc in qcs %}
+                    <tr>
+                        <td>Date</td>
+                        <td>{{ qc.qc_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>Result</td>
+                        <td>{{ qc.qc_result }}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+        <div class="row">
+            <h1 class="h2" style="padding-top: 50px">Sequences</h1>
+
+            <table class="table">
+                <tr>
+                    <th>Date</th>
+                    <th>Platform</th>
+                    <th>Read Length</th>
+                </tr>
+                {% for s in sequencing %}
+                    <tr>
+                        <td>{{ s.sequencing_date }}</td>
+                        <td>{{ s.sequencing_method }}</td>
+                        <td>{{ s.sequencing_read_length }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+
+{% endblock %}

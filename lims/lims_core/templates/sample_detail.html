@@ -1,0 +1,50 @@
+{% extends "master.html" %}
+
+{% block content %}
+
+    <h1 class="h1" style="padding: 20px 0 50px 20px">Sample Detail</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <h2>{{ sample.scientific_name }}</h2>
+            <table class="table">
+
+                <tr>
+                    <td>Taxon ID</td>
+                    <td>{{ sample.taxon_id }}</td>
+                </tr>
+                <tr>
+                    <td>Scientific Name</td>
+                    <td>{{ sample.scientific_name }}</td>
+                </tr>
+                <tr>
+                    <td>Common Name</td>
+                    <td>{{ sample.common_name }}</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="row">
+            <h1 class="h2" style="padding-top: 50px">Extractions</h1>
+
+            <table class="table">
+                <tr>
+                    <th>Extraction ID</th>
+                    <th>Extraction Date</th>
+                    <th>Extraction Method</th>
+                </tr>
+                {% for extraction in extractions %}
+                    <tr>
+                        <td><a href="/lims/extraction/{{ extraction.id }}/">{{ extraction.id }}</a></td>
+                        <td>{{ extraction.extraction_date }}</td>
+                        <td>{{ extraction.extraction_method }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+
+{% endblock %}

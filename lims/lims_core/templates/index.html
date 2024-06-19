@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+{% block content %}
+
+    <h1>Sample List</h1>
+
+    {% if samples %}
+
+        <table class="table">
+            <tr>
+                <th>Taxon ID</th>
+                <th>Scientific Name</th>
+            </tr>
+            {% for s in samples %}
+                <tr>
+                <td><a href="/lims/{{ s.id }}/">{{ s.taxon_id }}</a></td>
+                <td>{{ s.scientific_name }}</td>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No samples are available.</p>
+    {% endif %}
+
+{% endblock %}

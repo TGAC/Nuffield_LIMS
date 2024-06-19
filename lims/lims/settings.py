@@ -55,7 +55,7 @@ ROOT_URLCONF = 'lims.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["lims_core/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
